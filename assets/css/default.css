@@ -1,0 +1,65 @@
+body {
+    background-image: url(../images/Cloths-bc740630f228713e4bb0de8a7bffce22.png);
+}
+
+#header {
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 90%;
+}
+
+#logo {
+    font-size: 50px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+
+#logo_word_shop {
+    color: #35BA23;
+    margin-left: 3px;
+}
+
+#navigation {
+    text-align: right;
+    font-size: 24px;
+}
+
+#join_button {
+    font-size: 24px;
+    margin-left: 25px;
+    box-shadow: 5px 5px black;
+}
+
+#shop_descript {
+    font-size: 60px;
+    font-family: cursive;
+    font-weight: bolder;
+    margin: 0%;
+    text-align: center;
+}
+
+#feature_section {
+    margin-top: 350px;
+}
+
+#cloth_bg {
+    width: 100%;
+}
+
+#shop_info {
+    font-size: 24px;
+    font-family: cursive;
+    color: grey;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#search_bar {
+    width: 40%;
+    border-radius: 15px;
+    font-size: 30px;
+    display: flex;
+    margin: 100px auto 0;
+    outline: 0px;
+}
+
