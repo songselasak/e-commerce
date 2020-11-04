@@ -1,6 +1,12 @@
 body {
     background-image: url(../images/Cloths-bc740630f228713e4bb0de8a7bffce22.png);
+    background-repeat: no-repeat;
+    background-size: 100% 1080px;
 }
+
+
+
+
 
 #header {
     margin: 0 auto;
@@ -24,14 +30,17 @@ body {
     font-size: 24px;
 }
 
-#join_button {
-    font-size: 24px;
+#navigation > * {
     margin-left: 25px;
+}
+
+.button {
+    font-size: 20px;
     box-shadow: 5px 5px black;
 }
 
 #shop_descript {
-    font-size: 60px;
+    font-size: 50px;
     font-family: cursive;
     font-weight: bolder;
     margin: 0%;
@@ -47,7 +56,7 @@ body {
 }
 
 #shop_info {
-    font-size: 24px;
+    font-size: 20px;
     font-family: cursive;
     color: grey;
     margin-top: 10px;
@@ -55,11 +64,97 @@ body {
 }
 
 #search_bar {
-    width: 40%;
+    width: 50%;
     border-radius: 15px;
-    font-size: 30px;
+    font-size: 24px;
     display: flex;
     margin: 100px auto 0;
     outline: 0px;
+    padding: 5px;
 }
 
+#promotion_section {
+    margin-top: 400px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-around;
+}
+
+#promotion_section > *{
+    /* display: inline-block; */
+    width: 28%;
+    margin: 0 2%;
+    border: 3px solid;
+    /* text-align: left; */
+}
+
+#promotion1{
+    background-color: #ea9999;
+    display: flex;
+    justify-content: space-between;
+}
+
+#promotion2{
+    background-color: #f6b26b;
+    display: flex;
+    justify-content: space-between;
+}
+
+#promotion3{
+    background-color: #c27ba0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.promote_text {
+    padding-left: 15px;
+    margin: 50px 0;
+    color: white;
+    font-family: cursive;
+    /* display: inline-block; */
+}
+
+.promote_title {
+    font-size: 25px;
+}
+
+.promote_text > .button{
+    margin-top: 40px;
+    padding: 5px;
+}
+
+.promote_image img {
+    width: 100px;
+    margin-top: 55px;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 1500px){
+    body{
+        background-image: url(../images/Cloths-bc740630f228713e4bb0de8a7bffce22.png);
+        background-repeat: no-repeat;
+        background-size: 100% 800px;
+    }
+
+    #feature_section {
+        margin-top: 250px;
+    }
+
+    
+    #shop_descript {
+        font-size: 45px;
+    }
+
+    #shop_info {
+        font-size: 17px;
+    }
+
+    #search_bar {
+        font-size: 20px;
+    }
+
+    #promotion_section {
+        margin-top: 300px;
+    }
+    
+}
