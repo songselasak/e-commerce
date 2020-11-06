@@ -4,10 +4,6 @@ body {
     background-size: 100% 1080px;
 }
 
-
-
-
-
 #header {
     margin: 0 auto;
     padding-top: 15px;
@@ -39,20 +35,16 @@ body {
     box-shadow: 5px 5px black;
 }
 
+#feature_section {
+    margin-top: 350px;
+}
+
 #shop_descript {
     font-size: 50px;
     font-family: cursive;
     font-weight: bolder;
     margin: 0%;
     text-align: center;
-}
-
-#feature_section {
-    margin-top: 350px;
-}
-
-#cloth_bg {
-    width: 100%;
 }
 
 #shop_info {
@@ -75,35 +67,29 @@ body {
 
 #promotion_section {
     margin-top: 400px;
-    /* text-align: center; */
     display: flex;
     justify-content: space-around;
+    margin-bottom: 50px;
 }
 
 #promotion_section > *{
-    /* display: inline-block; */
     width: 28%;
     margin: 0 2%;
     border: 3px solid;
-    /* text-align: left; */
+    display: flex;
+    justify-content: space-between;
 }
 
 #promotion1{
     background-color: #ea9999;
-    display: flex;
-    justify-content: space-between;
 }
 
 #promotion2{
     background-color: #f6b26b;
-    display: flex;
-    justify-content: space-between;
 }
 
 #promotion3{
     background-color: #c27ba0;
-    display: flex;
-    justify-content: space-between;
 }
 
 .promote_text {
@@ -111,7 +97,6 @@ body {
     margin: 50px 0;
     color: white;
     font-family: cursive;
-    /* display: inline-block; */
 }
 
 .promote_title {
@@ -127,6 +112,113 @@ body {
     width: 100px;
     margin-top: 55px;
     margin-right: 20px;
+}
+
+.category_section{
+    float: left;
+    margin-right: 200px;
+}
+
+.category_list{
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bolder;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.category_list > * {
+    padding: 30px 0;
+}
+
+.category_list > * > img{
+    width: 60px;
+    height: auto;
+    float: left;
+    margin-right: 15px;
+}
+
+.category_list_word {
+    display:inline-block;
+    padding-top: 10px;
+}
+
+section {
+    display: inline-block;
+    padding: 50px;
+    background-color: #FAFAFA;
+}
+
+#product_section {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-gap: 50px;
+
+
+}
+
+.product {
+    border: 3px solid;
+}
+
+.product_picture {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+.product_discount {
+    padding: 10px;
+    display: block;
+    background-color: #ff9900;
+    border-radius: 15px;
+    font-size: 25px;
+    width: fit-content;
+    margin: 5% 0 0 77%;
+}
+
+.product_text {
+    display: inline-block;
+    width: 80%;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 20px;
+}
+
+.product_discount_price {
+    color: red;
+    text-decoration: line-through;
+    font-size: 25px;
+    padding: 5px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+.product_new_price {
+    color: #16D116;
+    font-size: 25px;
+    padding: 5px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+.product_price_button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.product_price_button button {
+    margin-right: 20px;
+}
+
+#load_more {
+    padding: 10px;
+    background-color: #93c47d;
+    border-radius: 15px;
+    font-size: 25px;
+    width: fit-content;
+    margin: 100px auto 50px;
 }
 
 @media only screen and (max-width: 1500px){
@@ -156,5 +248,4 @@ body {
     #promotion_section {
         margin-top: 300px;
     }
-    
 }
