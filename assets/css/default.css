@@ -115,8 +115,10 @@ body {
 }
 
 .category_section{
-    float: left;
-    margin-right: 200px;
+    display: inline-block;
+    width: 23%;
+    vertical-align: top;
+    /* margin-right: 200px; */
 }
 
 .category_list{
@@ -145,14 +147,16 @@ body {
 
 section {
     display: inline-block;
-    padding: 50px;
+    vertical-align: top;
+    padding: 1.8%;
     background-color: #FAFAFA;
+    width: 73%;
 }
 
 #product_section {
     display: grid;
-    grid-template-columns: 400px 400px 400px;
-    grid-gap: 50px;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 5%;
 
 
 }
@@ -162,7 +166,7 @@ section {
 }
 
 .product_picture {
-    width: 250px;
+    width: 60%;
     display: block;
     margin: 0 auto;
 }
@@ -247,5 +251,15 @@ section {
 
     #promotion_section {
         margin-top: 300px;
+    }
+
+    .product_discount {
+        padding: 10px;
+        display: block;
+        background-color: #ff9900;
+        border-radius: 15px;
+        font-size: 20px;
+        width: fit-content;
+        margin: 5% 0 0 77%;
     }
 }
