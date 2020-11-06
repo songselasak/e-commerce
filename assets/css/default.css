@@ -1,8 +1,12 @@
+/* home page */
+
 body {
     background-image: url(../images/Cloths-bc740630f228713e4bb0de8a7bffce22.png);
     background-repeat: no-repeat;
     background-size: 100% 1080px;
 }
+
+/* Top area */
 
 #header {
     margin: 0 auto;
@@ -35,6 +39,8 @@ body {
     box-shadow: 5px 5px black;
 }
 
+/* Middle area */
+
 #feature_section {
     margin-top: 350px;
 }
@@ -64,6 +70,8 @@ body {
     outline: 0px;
     padding: 5px;
 }
+
+/* Promotion area */
 
 #promotion_section {
     margin-top: 400px;
@@ -114,11 +122,12 @@ body {
     margin-right: 20px;
 }
 
+/* category area */
+
 .category_section{
     display: inline-block;
     width: 23%;
     vertical-align: top;
-    /* margin-right: 200px; */
 }
 
 .category_list{
@@ -153,12 +162,12 @@ section {
     width: 73%;
 }
 
+/* Product area */
+
 #product_section {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-gap: 5%;
-
-
 }
 
 .product {
@@ -178,7 +187,7 @@ section {
     border-radius: 15px;
     font-size: 25px;
     width: fit-content;
-    margin: 5% 0 0 77%;
+    margin: 10px 0 0 77%;
 }
 
 .product_text {
@@ -224,6 +233,96 @@ section {
     width: fit-content;
     margin: 100px auto 50px;
 }
+
+/* product page */
+
+#product_view{
+    border: 5px solid;
+}
+
+#product_view_child {
+    display: flex;
+    width: 100%;
+    margin: 25px 0 50px;
+}
+
+#product_image_section{
+    width: 40%;
+}
+
+#product_image_thumbnail_section {
+    display: flex;
+    justify-content: space-around;
+}
+
+#product_image_thumbnail_section > * {
+    border: 5px solid #D3D3D3;
+    width: 20%;
+}
+
+#product_image_thumbnail_section img {
+    width: 100%;
+}
+
+.vertical_line {
+    border-left: 5px solid #D3D3D3 ;
+    height: auto;
+
+}
+
+#product_detail_section {
+    margin: 0 3%;
+    width: 55%;
+}
+
+#product_detail_section .product_text {
+    margin-left: 0;
+    margin-bottom: 20%;
+}
+
+#price {
+    display: flex;
+    margin-bottom: 10%;
+}
+
+#product_detail_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+#product_name{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#cart {
+    margin: 30px 0;
+}
+
+#cart button {
+    padding: 5px;
+}
+
+.product_tag {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    width: 30%;
+}
+
+.product_tag > * {
+    padding: 10px;
+    background-color:#BEBEBE;
+    border-radius: 10px;
+}
+
+#comment {
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 60px 0 30px;
+}
+
+/* For responsive webpage */
 
 @media only screen and (max-width: 1500px){
     body{
