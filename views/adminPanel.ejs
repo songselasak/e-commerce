@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+
+    #box{
+        width: 90%;
+        margin: 2.5em auto 0;
+    }
+
+    #header{
+        display: flex;
+        justify-content:space-between;
+    }
+
+    #product-table{
+        border: 2px solid black;
+    }
+
+    td, th{
+        border-left: 2px solid black;
+    }
+
+    #product-form{
+        /* display: none; */
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div id="header">
+            <div>
+                <span>Awesome Shop </span>|<span> Admin Panel</span>
+            </div>
+            <div>
+                <span>Home </span>|<span> Log out</span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div class="container">
+                    <div>
+                        <div>All products in stock</div>
+                        <div>Add Product</div>
+                    </div>
+                    <div id="product-form">
+                        <form method="POST" action="/api/product">
+                        Name: <input type="text" name="title" />
+                        Quantity: <input type="number" name ="quantity" />
+                        Details: <input type="text" name ="description" />
+                        In Stock: <input type="date" name ="inStock" />
+                        Category:     
+                            <select id="category" name="category">
+                            <option value="australia">Cloth</option>
+                            <option value="canada">Bag</option>
+                            <option value="usa">Wallet</option>
+                            <option value="usa">Electronic</option>
+                            </select>
+                        <button type="submit">Save</button>
+                    </div>
+           
+                    <table class="table table-striped" id="product-table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Name</th>
+                          <th>Quantity</th>
+                          <th>Details</th>
+                          <th>In Stock</th>
+                          <th>Category</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>John</td>
+                          <td>Doe</td>
+                          <td>john@example.com</td>
+                          <td>Doe</td>
+                          <td>Doe</td>
+                          <td>Doe</td>
+                          <td>Doe</td>
+                        </tr>
+                        <tr>
+                          <td>Mary</td>
+                          <td>Moe</td>
+                          <td>mary@example.com</td>
+                          <td>Doe</td>
+                          <td>Doe</td>
+                          <td>Doe</td>
+                          <td>Doe</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

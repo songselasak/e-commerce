@@ -9,3 +9,9 @@ exports.getProductPage = (req, res, next) => {
         pageTitle: 'Awesome Shop',
     })
 }
+
+exports.getAdminPanel = (req, res, next) => {
+    res.render('adminPanel', {
+        pageTitle: 'Awesome Shop',
+    })
+}
