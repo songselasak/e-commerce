@@ -5,14 +5,11 @@ exports.createProduct = (req, res, next) => {
     //create product and store in database
     console.log('create product');
     const image = req.body.image;
-
     const title = req.body.title;
     const quantity = req.body.quantity;
     const description = req.body.description;
     const category = req.body.category;
     const inStock = req.body.inStock;
-
-
 
     const product = new Product({
         image: image,
@@ -30,7 +27,7 @@ exports.createProduct = (req, res, next) => {
         .catch(err => {
             console.log(err);
         });
-    res.send('Product is created');
+    //res.send('Product is created');
 }
 
 exports.updateProduct = (req, res, next) => {

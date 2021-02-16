@@ -20,11 +20,11 @@ const userSchema = new Schema({
 
     admin: {
         type: Boolean,
-        required: true
+        required: false
     }
 });
 
-userSchema.methods.createUser = function(user) {
+userSchema.methods.register = function(user) {
     let users = new User({
         username: user.username,
         email: user.email,

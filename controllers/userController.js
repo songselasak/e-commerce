@@ -6,17 +6,17 @@ const fs = require('fs');
 const User = require('../models/user');
 
 exports.signIn = (req, res) =>{
-    // if(req.session.userId){
-    //     User.findById(req.session.userId).then(result =>{
-    //         res.redirect('/');
-    //     }).catch(err =>{
-    //         console.log(err)
-    //     })
-    // }
-    // else{
+    if(req.session.userId){
+        User.findById(req.session.userId).then(result =>{
+            res.redirect('/');
+        }).catch(err =>{
+            console.log(err)
+        })
+    }
+    else{
         res.render('signIn', error = false);
         console.log(error);
-    // }
+    }
   
 }
 
@@ -64,7 +64,7 @@ exports.register = (req, res) =>{
             username: username,
             email: email,
             password: bcrypt.hashSync(password, 10),
-            // checkbox: checkbox,
+            checkbox: checkbox,
             admin: false,
         });
     

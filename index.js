@@ -30,6 +30,27 @@ app.use(session({
     secret: "secret",
     name: 'sid'
 }));
+app.post('/upload', (req, res) => {
+  // upload file function
+  let image;
+  let uploadPath;
+
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  image = req.files.image;
+  uploadPath = __dirname + '/public/uploads/' + image.name;
+
+  // Use the mv() method to place the file somewhere on your server
+  image.mv(uploadPath, function(err) {
+    if (err)
+      return res.status(500).send(err);
+
+    res.send('File uploaded!');
+  });
+})
 
 const adminRoutes = require('./routes/admin');
 const products = require('./routes/api/product');

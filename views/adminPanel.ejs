@@ -36,16 +36,21 @@
         justify-content:space-between;
         margin: 1em 0;
     }
+
+    #product-form{
+        display: none;
+        margin-bottom: 1em;
+    }
 </style>
 
 <body>
     <div id="box">
         <div id="header">
             <div>
-                <span>Awesome Shop </span>|<span> Admin Panel</span>
+                <span>Awesome Shop </span>|<span> Admin Panel (This website is a collboration between Song Selasak and Soth Sopheaparinha, check commit to see who does what task)</span>
             </div>
             <div>
-                <span>Home </span>|<span> Log out</span>
+                <span><a href="http://localhost:5000/">Home</a></span>
             </div>
         </div>
         <div>
@@ -59,9 +64,9 @@
                 <div class="container">
                     <div id="product-header">
                         <div><span>All products in stock</span> </div>
-                        <div><span>Add Product</span> </div>
+                        <div><button onclick="addProduct()">Add Product</button> </div>
                     </div>
-                    <div id="product-form" enctype="multipart/form-data">
+                    <div id="product-form">
                         <form method="POST" action="/api/product">
                             Image: <input type="file" name="image" />
                             Name: <input type="text" name="title" />
@@ -91,25 +96,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>Doe</td>
-                                <td>Doe</td>
-                                <td>Doe</td>
-                                <td>Doe</td>
-                            </tr>
-                            <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                                <td>Doe</td>
-                                <td>Doe</td>
-                                <td>Doe</td>
-                                <td>Doe</td>
-                            </tr>
-
                         <% for(var i=0; i< product.length; i++) {%> 
                             <tr>
                                 <td><%= product[i].image %></td>
@@ -129,3 +115,9 @@
     </div>
 </body>
 </html>
+
+<script>
+    function addProduct(){
+        document.getElementById("product-form").style.display = "flex";
+    }
+</script>
