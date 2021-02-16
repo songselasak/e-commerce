@@ -1,17 +1,21 @@
 const Product = require('../models/product');
+const fs = require('fs');
 
 exports.createProduct = (req, res, next) => {
     //create product and store in database
     console.log('create product');
+    const image = req.body.image;
 
     const title = req.body.title;
     const quantity = req.body.quantity;
     const description = req.body.description;
     const category = req.body.category;
     const inStock = req.body.inStock;
-    // const title = req.body.title; // picture
+
+
 
     const product = new Product({
+        image: image,
         title: title,
         quantity: quantity,
         description: description,
@@ -37,8 +41,11 @@ exports.deleteProduct = (req, res, next) => {
     //delete product
 }
 
-exports.getProducts = (req, res, next) => {
-    //get list of product
-    console.log('get products');
-    res.send('');
-}
+// exports.getProducts = (req, res, next) => {
+//     Product.find().then(product =>{
+//         console.log(product);
+//         res.render('adminPanel', {product: product});
+//     }).catch(err=>{
+//         console.log(err);
+//     })
+// }

@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
+const fileUpload = require('express-fileupload');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -10,10 +11,15 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public'))); // dirname means /(dirname of file index.js)/public
 
+app.use(fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+  }));
+
 const adminRoutes = require('./routes/admin');
 const products = require('./routes/api/product');
 app.use(adminRoutes);
 app.use('/api', products);
+
 
 
 // body-parser, use mean use the module, for syntax, just copy it

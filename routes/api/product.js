@@ -10,6 +10,6 @@ router.put('/product', productController.updateProduct);
 // Api to delete product
 router.delete('/product', productController.deleteProduct);
 // Api to get product
-router.get('/products', productController.getProducts);
+// router.get('/products', productController.getProducts);
 
 module.exports = router;

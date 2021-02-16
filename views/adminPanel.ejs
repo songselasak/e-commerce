@@ -28,10 +28,13 @@
 
     td, th{
         border-left: 2px solid black;
+        border-right: 2px solid black;
     }
 
-    #product-form{
-        /* display: none; */
+    #product-header{
+        display: flex;
+        justify-content:space-between;
+        margin: 1em 0;
     }
 </style>
 
@@ -46,65 +49,78 @@
             </div>
         </div>
         <div>
-            <div>
+            <!-- <div>
                 <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>
+            </div> -->
             <div>
                 <div class="container">
-                    <div>
-                        <div>All products in stock</div>
-                        <div>Add Product</div>
+                    <div id="product-header">
+                        <div><span>All products in stock</span> </div>
+                        <div><span>Add Product</span> </div>
                     </div>
-                    <div id="product-form">
+                    <div id="product-form" enctype="multipart/form-data">
                         <form method="POST" action="/api/product">
-                        Name: <input type="text" name="title" />
-                        Quantity: <input type="number" name ="quantity" />
-                        Details: <input type="text" name ="description" />
-                        In Stock: <input type="date" name ="inStock" />
-                        Category:     
-                            <select id="category" name="category">
-                            <option value="australia">Cloth</option>
-                            <option value="canada">Bag</option>
-                            <option value="usa">Wallet</option>
-                            <option value="usa">Electronic</option>
-                            </select>
+                            Image: <input type="file" name="image" />
+                            Name: <input type="text" name="title" />
+                            Quantity: <input type="number" name ="quantity" />
+                            Details: <input type="text" name ="description" />
+                            In Stock: <input type="text" name ="inStock" />
+                            Category:     
+                                <select id="category" name="category">
+                                <option value="Cloth">Cloth</option>
+                                <option value="Bag">Bag</option>
+                                <option value="Wallet">Wallet</option>
+                                <option value="Electronic">Electronic</option>
+                                </select>
                         <button type="submit">Save</button>
                     </div>
            
                     <table class="table table-striped" id="product-table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Name</th>
-                          <th>Quantity</th>
-                          <th>Details</th>
-                          <th>In Stock</th>
-                          <th>Category</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>John</td>
-                          <td>Doe</td>
-                          <td>john@example.com</td>
-                          <td>Doe</td>
-                          <td>Doe</td>
-                          <td>Doe</td>
-                          <td>Doe</td>
-                        </tr>
-                        <tr>
-                          <td>Mary</td>
-                          <td>Moe</td>
-                          <td>mary@example.com</td>
-                          <td>Doe</td>
-                          <td>Doe</td>
-                          <td>Doe</td>
-                          <td>Doe</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Details</th>
+                                <th>In Stock</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                                <td>Doe</td>
+                                <td>Doe</td>
+                                <td>Doe</td>
+                                <td>Doe</td>
+                            </tr>
+                            <tr>
+                                <td>Mary</td>
+                                <td>Moe</td>
+                                <td>mary@example.com</td>
+                                <td>Doe</td>
+                                <td>Doe</td>
+                                <td>Doe</td>
+                                <td>Doe</td>
+                            </tr>
+
+                        <% for(var i=0; i< product.length; i++) {%> 
+                            <tr>
+                                <td><%= product[i].image %></td>
+                                <td><%= product[i].title %></td>
+                                <td><%= product[i].quantity %></td>
+                                <td><%= product[i].description %></td>
+                                <td><%= product[i].inStock %></td>
+                                <td><%= product[i].category %></td>
+                                <td>Action placeholder</td>
+                            </tr>
+                            <% } %>
                       </tbody>
                     </table>
                   </div>

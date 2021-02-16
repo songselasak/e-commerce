@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
+    image: {
+        type: String,
+        required: false
+    },
+    
     title: {
         type: String,
         required: true
@@ -24,7 +29,7 @@ const productSchema = new Schema({
     },
 
     inStock: {
-        type: Date,
+        type: String,
         required: true
     },
 });
