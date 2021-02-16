@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 const fileUpload = require('express-fileupload');
+const cookie = require('cookie-parser');
+var session = require('express-session')
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -15,10 +17,26 @@ app.use(fileUpload({
     limits: { fileSize: 50 * 1024 * 1024 },
   }));
 
+app.use(cookie());
+app.use(session({
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        maxAge: 1000*60*60,
+        sameSite: true,
+        secure: false
+
+    },
+    secret: "secret",
+    name: 'sid'
+}));
+
 const adminRoutes = require('./routes/admin');
 const products = require('./routes/api/product');
+const userRoutes = require('./routes/user');
 app.use(adminRoutes);
 app.use('/api', products);
+app.use(userRoutes);
 
 
 
