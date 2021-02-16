@@ -8,6 +8,36 @@ body {
     font-family: cursive;
 }
 
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }
+
+  #join:link, #join:visited {
+    background-color: #35BA23;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  #join:hover, #join:active {
+    background-color: green;
+  }
+
 /* Top area */
 
 #header {

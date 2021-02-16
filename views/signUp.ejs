@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        text-align: center;
+        color: black;
+        position: relative;
+    
+    }
+    #background{
+
+        width: 110%;
+    }
+    #note_1{
+        text-align: center;
+    }
+    #note_1 h2{
+        font-size: 3rem;
+    }
+    #note_1 p{
+        color: rgb(168, 162, 162);
+    }
+    #note{
+        border: 5px solid black;
+        padding: 5%;
+    }
+    #note_2 span{
+        margin-right: 10px;
+        color: rgb(168, 162, 162);
+    }
+</style>
+
+<body>
+    <div class="container" id="note">
+        <img id="background " src="/assets/images/background.jpg" alt="">
+        <div class="container" id="note_1">
+            <h2>Welcome to Awesome Shop</h2>
+            <p>Don't have an account? Create your own account, it takes less than a minute</p>
+        </div>
+        <br>
+        <form class="container-sm" id="wrape2" action="http://localhost:5000/register" method="POST">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                <% if(errorusername){ %>
+                    <span style="color: rgb(197, 10, 10);">(Username can't be blank!)</span>
+                <% } %>
+                <input type="text" class="form-control" id="exampleFormControlUsername" name="username">
+                <% if(errorusername){ %>
+                    <script>
+                        document.getElementById('exampleFormControlUsername').className += " " + "is-error";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <% if(errorEmailExist){ %>
+                    <span style="color: rgb(197, 10, 10);"><%= message%></span>
+                <% } %>
+                <% if(errorEmail){ %>
+                    <span style="color: rgb(197, 10, 10);">(Input your email!)</span>
+                <% } %>
+                <input type="email" class="form-control" id="exampleFormControlEmail" placeholder="name@example.com" name="email">
+                <% if(errorEmail || errorEmailExist){ %>
+                    <script>
+                        document.getElementById('exampleFormControlEmail').className += " " + "is-error";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                <% if(errorpasswordCompare){ %>
+                    <span style="color: rgb(197, 10, 10);"><%= message%></span>
+                <% } %>
+                <% if(errorpassword){ %>
+                    <span style="color: rgb(197, 10, 10);">(Input your password!)</span>
+                <% } %>
+                <% if(errorpasswordLenght){ %>
+                    <span style="color: rgb(197, 10, 10);">(Password must be at least 3 characters)</span>
+                <% } %>
+                <input type="password" class="form-control" id="exampleFormControlPassword" rows="3" name="password"></input>
+                <% if(errorpasswordCompare || errorpassword || errorpasswordLenght){ %>
+                    <script>
+                        document.getElementById('exampleFormControlPassword').className += " " + "is-error";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Confirm Password</label>
+                <% if(errorConfirmpassword){ %>
+                    <span style="color: rgb(197, 10, 10);">(Input your Confirm password!)</span>
+                <% } %>
+                <input type="password" class="form-control" id="exampleFormControlConfirmPassword" rows="3" name="confirmPassword"></input>
+                <% if(errorConfirmpassword){ %>
+                    <script>
+                        document.getElementById('exampleFormControlConfirmPassword').className += " " + "is-error";
+                    </script>
+                <%} %>
+                <% if(errorpasswordCompare){ %>
+                    <script>
+                        document.getElementById('exampleFormControlConfirmPassword').className += " " + "is-error";
+                    </script>
+                <%} %>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefaultCheckBox" name="checkbox">
+                <label class="form-check-label" for="flexCheckDefault">
+                  I accept Terms and Conditions
+                </label>
+                <% if(errorcheckbox){ %>
+                    <span style="color: rgb(197, 10, 10);">(You must accept the term and condition!)</span>
+                <% } %>
+                <% if(errorcheckbox){ %>
+                    <script>
+                        document.getElementById('flexCheckDefaultCheckBox').className += " " + "is-error";
+                    </script>
+                <%} %>
+            </div>
+            <br>
+            <br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="note_2">
+        <span>Already have an account?</span>
+        <a href="http://localhost:5000/signin"> Sign In</a>
+    </div>
+    <br>
+    <footer> 2021 &copy; AwsomeShop by Tom</footer>
+
+</body>
+</html>
